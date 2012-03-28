@@ -6,12 +6,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 public class LoginPanel extends JPanel {
 	
 	public LoginPanel(){
-		setLayout(null);
 		
 		JLabel userName = new JLabel("Username");
 		userName.setBounds(300, 200, 100, 20);
@@ -26,11 +29,17 @@ public class LoginPanel extends JPanel {
 		passWordField.setBounds(420, 220, 100, 20);
 		
 		JButton loginButton = new JButton("Login");
-		loginButton.setBounds(550, 200, 100, 50);
+		loginButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
 		
+		loginButton.setBounds(538, 190, 100, 50);
+		setLayout(null);
 		add(userName);
-		add(passWord);
 		add(userNameField);
+		add(passWord);
 		add(passWordField);
 		add(loginButton);
 		
