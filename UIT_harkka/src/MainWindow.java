@@ -1,3 +1,5 @@
+import java.awt.CardLayout;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -6,6 +8,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 public class MainWindow extends JFrame {
+	
+	private CardLayout cl;
 	
 	public MainWindow(){
 		createGUI();
@@ -20,9 +24,9 @@ public class MainWindow extends JFrame {
 		setSize(800, 640);
 		setResizable(false);
 		
-		LoginPanel lp = new LoginPanel();
-		getContentPane().add(lp);
-			
+		CardPanel cardpanel = new CardPanel();
+		getContentPane().add(cardpanel);
+		
 	}
 	
     public static void main(String[] args) {
@@ -32,5 +36,9 @@ public class MainWindow extends JFrame {
                 mw.setVisible(true);
             }
         });
+    }
+    
+    public CardLayout getCl(){
+    	return cl;
     }
 }

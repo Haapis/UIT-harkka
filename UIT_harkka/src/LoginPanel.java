@@ -1,21 +1,22 @@
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 
 public class LoginPanel extends JPanel {
 	
+	private CardPanel cp;
+	
 	public LoginPanel(){
-		
 		JLabel userName = new JLabel("Username");
 		userName.setBounds(300, 200, 100, 20);
 		
@@ -31,10 +32,10 @@ public class LoginPanel extends JPanel {
 		JButton loginButton = new JButton("Login");
 		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				cp.swapPanel("Main panel");
 			}
 		});
-		
+				
 		loginButton.setBounds(538, 190, 100, 50);
 		setLayout(null);
 		add(userName);
@@ -43,6 +44,10 @@ public class LoginPanel extends JPanel {
 		add(passWordField);
 		add(loginButton);
 		
+	}
+	
+	public void setCP(CardPanel cp){
+		this.cp = cp;
 	}
 
 }
