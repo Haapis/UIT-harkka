@@ -30,9 +30,11 @@ public class LoginPanel extends JPanel {
 		passWordField.setBounds(420, 220, 100, 20);
 		
 		JButton loginButton = new JButton("Login");
+		
 		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				cp.swapPanel("Main panel");
+				cp.getMainWindow().setButtonPanelVisible();
 			}
 		});
 				
